@@ -1,0 +1,14 @@
+C:\Users\yanni\Programmieren\mama\pronounciation\ya-pronunciation\words-finder\WordAudioLinkFinder\bin\Debug\net10.0\WordAudioLinkFinder.exe
+C:\Users\yanni\Programmieren\mama\pronounciation\ya-pronunciation\words-finder\WordAudioLinkFinder\bin\Debug\net10.0\WordAudioLinkFinder.deps.json
+C:\Users\yanni\Programmieren\mama\pronounciation\ya-pronunciation\words-finder\WordAudioLinkFinder\bin\Debug\net10.0\WordAudioLinkFinder.runtimeconfig.json
+C:\Users\yanni\Programmieren\mama\pronounciation\ya-pronunciation\words-finder\WordAudioLinkFinder\bin\Debug\net10.0\WordAudioLinkFinder.dll
+C:\Users\yanni\Programmieren\mama\pronounciation\ya-pronunciation\words-finder\WordAudioLinkFinder\bin\Debug\net10.0\WordAudioLinkFinder.pdb
+C:\Users\yanni\Programmieren\mama\pronounciation\ya-pronunciation\words-finder\WordAudioLinkFinder\obj\Debug\net10.0\WordAudioLinkFinder.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\yanni\Programmieren\mama\pronounciation\ya-pronunciation\words-finder\WordAudioLinkFinder\obj\Debug\net10.0\WordAudioLinkFinder.AssemblyInfoInputs.cache
+C:\Users\yanni\Programmieren\mama\pronounciation\ya-pronunciation\words-finder\WordAudioLinkFinder\obj\Debug\net10.0\WordAudioLinkFinder.AssemblyInfo.cs
+C:\Users\yanni\Programmieren\mama\pronounciation\ya-pronunciation\words-finder\WordAudioLinkFinder\obj\Debug\net10.0\WordAudioLinkFinder.csproj.CoreCompileInputs.cache
+C:\Users\yanni\Programmieren\mama\pronounciation\ya-pronunciation\words-finder\WordAudioLinkFinder\obj\Debug\net10.0\WordAudioLinkFinder.dll
+C:\Users\yanni\Programmieren\mama\pronounciation\ya-pronunciation\words-finder\WordAudioLinkFinder\obj\Debug\net10.0\refint\WordAudioLinkFinder.dll
+C:\Users\yanni\Programmieren\mama\pronounciation\ya-pronunciation\words-finder\WordAudioLinkFinder\obj\Debug\net10.0\WordAudioLinkFinder.pdb
+C:\Users\yanni\Programmieren\mama\pronounciation\ya-pronunciation\words-finder\WordAudioLinkFinder\obj\Debug\net10.0\WordAudioLinkFinder.genruntimeconfig.cache
+C:\Users\yanni\Programmieren\mama\pronounciation\ya-pronunciation\words-finder\WordAudioLinkFinder\obj\Debug\net10.0\ref\WordAudioLinkFinder.dll

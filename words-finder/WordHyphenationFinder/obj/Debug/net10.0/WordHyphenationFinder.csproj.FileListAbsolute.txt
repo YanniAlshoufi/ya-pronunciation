@@ -1,0 +1,14 @@
+C:\Users\yanni\Programmieren\mama\pronounciation\ya-pronunciation\words-finder\WordHyphenationFinder\bin\Debug\net10.0\WordHyphenationFinder.exe
+C:\Users\yanni\Programmieren\mama\pronounciation\ya-pronunciation\words-finder\WordHyphenationFinder\bin\Debug\net10.0\WordHyphenationFinder.deps.json
+C:\Users\yanni\Programmieren\mama\pronounciation\ya-pronunciation\words-finder\WordHyphenationFinder\bin\Debug\net10.0\WordHyphenationFinder.runtimeconfig.json
+C:\Users\yanni\Programmieren\mama\pronounciation\ya-pronunciation\words-finder\WordHyphenationFinder\bin\Debug\net10.0\WordHyphenationFinder.dll
+C:\Users\yanni\Programmieren\mama\pronounciation\ya-pronunciation\words-finder\WordHyphenationFinder\bin\Debug\net10.0\WordHyphenationFinder.pdb
+C:\Users\yanni\Programmieren\mama\pronounciation\ya-pronunciation\words-finder\WordHyphenationFinder\obj\Debug\net10.0\WordHyphenationFinder.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\yanni\Programmieren\mama\pronounciation\ya-pronunciation\words-finder\WordHyphenationFinder\obj\Debug\net10.0\WordHyphenationFinder.AssemblyInfoInputs.cache
+C:\Users\yanni\Programmieren\mama\pronounciation\ya-pronunciation\words-finder\WordHyphenationFinder\obj\Debug\net10.0\WordHyphenationFinder.AssemblyInfo.cs
+C:\Users\yanni\Programmieren\mama\pronounciation\ya-pronunciation\words-finder\WordHyphenationFinder\obj\Debug\net10.0\WordHyphenationFinder.csproj.CoreCompileInputs.cache
+C:\Users\yanni\Programmieren\mama\pronounciation\ya-pronunciation\words-finder\WordHyphenationFinder\obj\Debug\net10.0\WordHyphenationFinder.dll
+C:\Users\yanni\Programmieren\mama\pronounciation\ya-pronunciation\words-finder\WordHyphenationFinder\obj\Debug\net10.0\refint\WordHyphenationFinder.dll
+C:\Users\yanni\Programmieren\mama\pronounciation\ya-pronunciation\words-finder\WordHyphenationFinder\obj\Debug\net10.0\WordHyphenationFinder.pdb
+C:\Users\yanni\Programmieren\mama\pronounciation\ya-pronunciation\words-finder\WordHyphenationFinder\obj\Debug\net10.0\WordHyphenationFinder.genruntimeconfig.cache
+C:\Users\yanni\Programmieren\mama\pronounciation\ya-pronunciation\words-finder\WordHyphenationFinder\obj\Debug\net10.0\ref\WordHyphenationFinder.dll
