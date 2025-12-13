@@ -21,19 +21,18 @@ var contentAsString = System.Text.Encoding.UTF8.GetString(contentBytesArray, 0, 
 File.WriteAllText("response.html", contentAsString);
 
 //lang=regex
-var hyphenationPartRegex = new Regex("""
-    <span class="hyphenation" data-id="(.*?)">(?<hyphenation>.*?)<\/span>
+var audioLinkRegex = new Regex("""
+    <source type="audio\/(.*?)" src="(?<audioLink>.*?)">
     """, RegexOptions.Multiline);
 
-var hyphenationMatch = hyphenationPartRegex.Matches(contentAsString);
+var audioLinkMatch = audioLinkRegex.Matches(contentAsString);
 
 
-
-if (hyphenationMatch.Count <= 0)
+if (audioLinkMatch.Count <= 0)
 {
-    Console.WriteLine("ERROR No hyphenation found for the given word.");
+    Console.WriteLine("ERROR No audio link found for the given word.");
     return;
 }
 
-var hyphenation = hyphenationMatch[0].Groups["hyphenation"].Value;
-Console.WriteLine($"OK {hyphenation}");
+var audioLink = audioLinkMatch[0].Groups["audioLink"].Value;
+Console.WriteLine($"OK {audioLink}");

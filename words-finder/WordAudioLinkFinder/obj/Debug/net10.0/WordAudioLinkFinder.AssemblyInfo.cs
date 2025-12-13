@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("WordAudioLinkFinder")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e2ffe26450482a437abfb4e9053c9f0fa431a095")]
 [assembly: System.Reflection.AssemblyProductAttribute("WordAudioLinkFinder")]
 [assembly: System.Reflection.AssemblyTitleAttribute("WordAudioLinkFinder")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
