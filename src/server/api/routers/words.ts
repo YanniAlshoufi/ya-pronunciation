@@ -42,7 +42,6 @@ export const wordsRouter = createTRPCRouter({
       .from(words)
       .groupBy(words.level)
       .having(sql`COUNT(*) > 0`);
-    console.log(res);
     return res.map((r) => r.level) as PossibleLevel[];
   }),
 });

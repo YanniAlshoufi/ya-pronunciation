@@ -1,4 +1,4 @@
-import { wordsRouter } from "@/server/api/routers/post";
+import { wordsRouter } from "@/server/api/routers/words";
 import { createCallerFactory, createTRPCRouter } from "@/server/api/trpc";
 
 /**

@@ -10,7 +10,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { Spinner } from "@/components/ui/spinner";
-import type { PossibleLevel } from "@/server/api/routers/post";
+import type { PossibleLevel } from "@/server/api/routers/words";
 import { useEffect } from "react";
 
 export default function Header(props: {

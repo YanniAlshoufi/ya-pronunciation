@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unsafe-return */
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
 /* eslint-disable @typescript-eslint/no-unsafe-call */
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
@@ -15,6 +14,7 @@ export default function Footer(props: {
   word: Word | undefined;
   onCorrect: () => void;
   isPlayingAudio: boolean;
+  canRecord: boolean;
 }) {
   const {
     transcript,
@@ -25,6 +25,12 @@ export default function Footer(props: {
   const [shouldRecord, setShouldRecord] = useState(false);
   const [wasRecordingBeforePlayingAudio, setWasRecordingBeforePlayingAudio] =
     useState(false);
+
+  useEffect(() => {
+    if (!props.canRecord) {
+      setShouldRecord(false);
+    }
+  }, [props.canRecord]);
 
   useEffect(() => {
     if (props.isPlayingAudio && shouldRecord) {
@@ -67,6 +73,7 @@ export default function Footer(props: {
               ? () => setShouldRecord(false)
               : () => setShouldRecord(true)
           }
+          disabled={props.isPlayingAudio || !props.canRecord}
         >
           <span className="scale-200">
             {recording ? (
