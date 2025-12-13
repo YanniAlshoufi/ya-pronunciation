@@ -15,8 +15,10 @@ export const words = createTable(
   "words",
   (d) => ({
     id: d.integer().primaryKey().generatedByDefaultAsIdentity(),
-    word: d.varchar({ length: 256 }),
+    word: d.varchar({ length: 512 }),
     level: d.varchar({ length: 2 }),
+    hyphenation: d.varchar({ length: 512 }),
+    audioLink: d.varchar({ length: 2048 }),
     createdAt: d
       .timestamp({ withTimezone: true })
       .$defaultFn(() => /* @__PURE__ */ new Date())
