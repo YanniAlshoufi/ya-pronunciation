@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("WordHyphenationFinder")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6ecdf9a60b8f2ecb245f52fa72fbe0ed18b1d0a9")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a5564461a8461d30b3a21862edefdd51f495395a")]
 [assembly: System.Reflection.AssemblyProductAttribute("WordHyphenationFinder")]
 [assembly: System.Reflection.AssemblyTitleAttribute("WordHyphenationFinder")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
