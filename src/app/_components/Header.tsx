@@ -38,8 +38,8 @@ export default function Header(props: {
   }, [props]);
 
   return (
-    <header className="flex h-30 w-full justify-center">
-      <div className="flex h-full w-4/5 items-center justify-between">
+    <header className="flex h-30 w-full justify-center max-sm:pt-2">
+      <div className="flex h-full w-4/5 items-center justify-between max-sm:flex-col max-sm:gap-2 max-sm:*:w-full">
         <Button
           onClick={async () => {
             if (audio !== undefined) {
@@ -74,7 +74,7 @@ export default function Header(props: {
             )}
           </SelectContent>
         </Select>
-        <div className="flex gap-10">
+        <div className="flex max-sm:justify-between max-sm:gap-2 max-sm:*:flex-1 sm:gap-10">
           <Button onClick={props.restart}>neu beginnen</Button>
           <Button onClick={props.onSkip}>überspringen</Button>
         </div>
