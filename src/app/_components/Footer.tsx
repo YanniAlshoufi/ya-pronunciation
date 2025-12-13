@@ -5,18 +5,52 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import SpeechRecognition, {
   useSpeechRecognition,
 } from "react-speech-recognition";
 import type { Word } from "../page";
 
-export default function Footer(props: { word: Word; onCorrect: () => void }) {
-  const { transcript, listening, browserSupportsSpeechRecognition } =
-    useSpeechRecognition();
+export default function Footer(props: {
+  word: Word | undefined;
+  onCorrect: () => void;
+  isPlayingAudio: boolean;
+}) {
+  const {
+    transcript,
+    listening: recording,
+    browserSupportsSpeechRecognition,
+  } = useSpeechRecognition();
+
+  const [shouldRecord, setShouldRecord] = useState(false);
+  const [wasRecordingBeforePlayingAudio, setWasRecordingBeforePlayingAudio] =
+    useState(false);
 
   useEffect(() => {
-    if (transcript.toLowerCase().endsWith(props.word.word.toLowerCase())) {
+    if (props.isPlayingAudio && shouldRecord) {
+      setShouldRecord(false);
+      setWasRecordingBeforePlayingAudio(true);
+    }
+    if (!props.isPlayingAudio && wasRecordingBeforePlayingAudio) {
+      setShouldRecord(true);
+      setWasRecordingBeforePlayingAudio(false);
+    }
+  }, [props.isPlayingAudio, shouldRecord, wasRecordingBeforePlayingAudio]);
+
+  useEffect(() => {
+    if (recording && !shouldRecord) {
+      SpeechRecognition.stopListening();
+    }
+    if (!recording && shouldRecord && props.word !== undefined) {
+      SpeechRecognition.startListening({ language: "de-AT" });
+    }
+  }, [recording, shouldRecord, props.word]);
+
+  useEffect(() => {
+    if (
+      props.word !== undefined &&
+      transcript.toLowerCase().endsWith(props.word.word.toLowerCase() ?? "")
+    ) {
       SpeechRecognition.stopListening().then(() => {
         props.onCorrect();
       });
@@ -29,14 +63,18 @@ export default function Footer(props: { word: Word; onCorrect: () => void }) {
         <Button
           className="min-h-30 w-full"
           onClick={
-            listening
-              ? SpeechRecognition.stopListening
-              : () => SpeechRecognition.startListening({ language: "de-AT" })
+            shouldRecord
+              ? () => setShouldRecord(false)
+              : () => setShouldRecord(true)
           }
         >
           <span className="scale-200">
-            {listening ? (
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            {recording ? (
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                className="scale-150"
+              >
                 <g fill="none">
                   <path d="m12.593 23.258l-.011.002l-.071.035l-.02.004l-.014-.004l-.071-.035q-.016-.005-.024.005l-.004.01l-.017.428l.005.02l.01.013l.104.074l.015.004l.012-.004l.104-.074l.012-.016l.004-.017l-.017-.427q-.004-.016-.017-.018m.265-.113l-.013.002l-.185.093l-.01.01l-.003.011l.018.43l.005.012l.008.007l.201.093q.019.005.029-.008l.004-.014l-.034-.614q-.005-.018-.02-.022m-.715.002a.02.02 0 0 0-.027.006l-.006.014l-.034.614q.001.018.017.024l.015-.002l.201-.093l.01-.008l.004-.011l.017-.43l-.003-.012l-.01-.01z" />
                   <path

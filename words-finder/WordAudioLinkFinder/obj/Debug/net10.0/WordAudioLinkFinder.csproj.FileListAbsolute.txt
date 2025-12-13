@@ -12,3 +12,4 @@ C:\Users\yanni\Programmieren\mama\pronounciation\ya-pronunciation\words-finder\W
 C:\Users\yanni\Programmieren\mama\pronounciation\ya-pronunciation\words-finder\WordAudioLinkFinder\obj\Debug\net10.0\WordAudioLinkFinder.pdb
 C:\Users\yanni\Programmieren\mama\pronounciation\ya-pronunciation\words-finder\WordAudioLinkFinder\obj\Debug\net10.0\WordAudioLinkFinder.genruntimeconfig.cache
 C:\Users\yanni\Programmieren\mama\pronounciation\ya-pronunciation\words-finder\WordAudioLinkFinder\obj\Debug\net10.0\ref\WordAudioLinkFinder.dll
+C:\Users\yanni\Programmieren\mama\pronounciation\ya-pronunciation\words-finder\WordAudioLinkFinder\obj\Debug\net10.0\WordAudioLinkFinder.sourcelink.json

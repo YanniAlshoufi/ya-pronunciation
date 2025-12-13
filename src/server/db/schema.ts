@@ -15,8 +15,8 @@ export const words = createTable(
   "words",
   (d) => ({
     id: d.integer().primaryKey().generatedByDefaultAsIdentity(),
-    word: d.varchar({ length: 512 }),
-    level: d.varchar({ length: 2 }),
+    word: d.varchar({ length: 512 }).notNull(),
+    level: d.varchar({ length: 2 }).notNull(),
     hyphenation: d.varchar({ length: 512 }),
     audioLink: d.varchar({ length: 2048 }),
     createdAt: d

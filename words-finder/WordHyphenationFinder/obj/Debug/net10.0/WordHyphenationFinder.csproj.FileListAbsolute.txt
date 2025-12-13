@@ -12,3 +12,4 @@ C:\Users\yanni\Programmieren\mama\pronounciation\ya-pronunciation\words-finder\W
 C:\Users\yanni\Programmieren\mama\pronounciation\ya-pronunciation\words-finder\WordHyphenationFinder\obj\Debug\net10.0\WordHyphenationFinder.pdb
 C:\Users\yanni\Programmieren\mama\pronounciation\ya-pronunciation\words-finder\WordHyphenationFinder\obj\Debug\net10.0\WordHyphenationFinder.genruntimeconfig.cache
 C:\Users\yanni\Programmieren\mama\pronounciation\ya-pronunciation\words-finder\WordHyphenationFinder\obj\Debug\net10.0\ref\WordHyphenationFinder.dll
+C:\Users\yanni\Programmieren\mama\pronounciation\ya-pronunciation\words-finder\WordHyphenationFinder\obj\Debug\net10.0\WordHyphenationFinder.sourcelink.json
