@@ -5,7 +5,7 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import SpeechRecognition, {
   useSpeechRecognition,
 } from "react-speech-recognition";
@@ -24,9 +24,14 @@ export default function Footer(props: {
     browserSupportsSpeechRecognition,
   } = useSpeechRecognition();
 
+  const [isMounted, setIsMounted] = useState(false);
   const [shouldRecord, setShouldRecord] = useState(false);
   const [wasRecordingBeforePlayingAudio, setWasRecordingBeforePlayingAudio] =
     useState(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
 
   useEffect(() => {
     if (!props.canRecord) {
@@ -45,12 +50,39 @@ export default function Footer(props: {
     }
   }, [props.isPlayingAudio, shouldRecord, wasRecordingBeforePlayingAudio]);
 
+  const startRecognitionRef = useRef<NodeJS.Timeout | null>(null);
+  const lastWordObjRef = useRef<Word | undefined>(undefined);
+
   useEffect(() => {
     if (recording && !shouldRecord) {
+      if (startRecognitionRef.current) {
+        clearTimeout(startRecognitionRef.current);
+        startRecognitionRef.current = null;
+        lastWordObjRef.current = undefined;
+      }
       SpeechRecognition.stopListening();
     }
     if (!recording && shouldRecord && props.word !== undefined) {
-      SpeechRecognition.startListening({ language: "de-AT" });
+      // Reschedule if word object reference changed or no schedule exists
+      const wordChanged = lastWordObjRef.current !== props.word;
+      if (startRecognitionRef.current === null || wordChanged) {
+        if (startRecognitionRef.current) {
+          clearTimeout(startRecognitionRef.current);
+        }
+
+        lastWordObjRef.current = props.word;
+        startRecognitionRef.current = setTimeout(() => {
+          console.log(
+            `Actually starting speech recognition for word: ${lastWordObjRef.current?.word}`,
+          );
+          SpeechRecognition.startListening({ language: "de-AT" }).catch(
+            (error) => {
+              console.error("Failed to start speech recognition:", error);
+            },
+          );
+          startRecognitionRef.current = null;
+        }, 150);
+      }
     }
   }, [recording, shouldRecord, props.word]);
 
@@ -61,14 +93,16 @@ export default function Footer(props: {
     ) {
       resetTranscript();
       SpeechRecognition.stopListening().then(() => {
+        console.log("Microphone stopped, calling onCorrect");
         props.onCorrect();
       });
     }
-  }, [props, transcript, resetTranscript]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [props.word, props.onCorrect, transcript, resetTranscript]);
 
   return (
     <footer className="w-full">
-      {browserSupportsSpeechRecognition ? (
+      {!isMounted || browserSupportsSpeechRecognition ? (
         <Button
           className="min-h-30 w-full"
           onClick={

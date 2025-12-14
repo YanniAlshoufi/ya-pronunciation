@@ -16,24 +16,24 @@ export const wordsRouter = createTRPCRouter({
       };
     }),
 
-  getRandomWord: publicProcedure
+  getRandomWords: publicProcedure
     .input(
       z.object({
         level: z.enum(POSSIBLE_LEVELS),
+        amount: z.number().min(1),
       }),
     )
     .query(async ({ ctx, input }) => {
-      // Placeholder implementation
       const res = await ctx.db
         .select()
         .from(words)
         .where((word) => eq(word.level, input.level))
         .orderBy(sql`RANDOM()`)
-        .limit(1);
+        .limit(input.amount);
       if (res.length <= 0) {
         return "empty";
       }
-      return res[0];
+      return res;
     }),
 
   getNonemptyLevels: publicProcedure.query(async ({ ctx }) => {

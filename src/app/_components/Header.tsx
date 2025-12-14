@@ -9,9 +9,8 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { Spinner } from "@/components/ui/spinner";
 import type { PossibleLevel } from "@/server/api/routers/words";
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 
 export default function Header(props: {
   word: Word | undefined;
@@ -22,10 +21,19 @@ export default function Header(props: {
   setSelectedLevel: (level: PossibleLevel | undefined) => void;
   setIsPlayingAudio: (isPlaying: boolean) => void;
 }) {
-  let audio: HTMLAudioElement | undefined = undefined;
-  if (typeof Audio !== undefined && props.word !== undefined) {
-    audio = new Audio(props.word.audioLink);
-  }
+  const audioRef = useRef<HTMLAudioElement | null>(null);
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      audioRef.current = new Audio();
+    }
+  }, []);
+
+  useEffect(() => {
+    if (props.word?.audioLink !== undefined && audioRef.current !== null) {
+      audioRef.current.src = props.word.audioLink;
+    }
+  }, [props.word]);
 
   useEffect(() => {
     if (
@@ -42,16 +50,16 @@ export default function Header(props: {
       <div className="flex h-full w-4/5 items-center justify-between max-sm:flex-col max-sm:gap-2 max-sm:*:w-full">
         <Button
           onClick={async () => {
-            if (audio !== undefined) {
+            if (audioRef.current !== null) {
               props.setIsPlayingAudio(true);
-              audio.onended = () => {
+              audioRef.current.onended = () => {
                 props.setIsPlayingAudio(false);
               };
-              await audio.play();
+              await audioRef.current.play();
             }
           }}
         >
-          {audio === undefined ? <Spinner /> : "anhören"}
+          anhören
         </Button>
         <Select
           value={props.selectedLevel}
